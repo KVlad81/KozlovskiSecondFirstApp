@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Kozlovski First Application</string>
     <string name="action_settings">Settings</string>
+    <string name="kozlovski_vladislav">Kozlovski Vladislav</string>
+    <string name="myphoto">MyPhoto</string>
+    <string name="github_kvlad81">GitHub: KVlad81</string>
 </resources>
