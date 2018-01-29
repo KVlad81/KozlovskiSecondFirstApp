@@ -1,3 +1,13 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="firstPageImageWidth">174dp</dimen>
+    <dimen name="firstPageImageHeight">174dp</dimen>
+    <dimen name="first_page_horizontal_image_height">174dp</dimen>
+    <dimen name="first_page_horizontal_image_width">174dp</dimen>
+    <dimen name="basic_mergin">18dp</dimen>
+    <dimen name="hello_size">18sp</dimen>
+    <dimen name="application_name_size">23sp</dimen>
+    <dimen name="application_image_width">174dp</dimen>
+    <dimen name="application_image_height">174dp</dimen>
+    <dimen name="application_description_size">18sp</dimen>
 </resources>
