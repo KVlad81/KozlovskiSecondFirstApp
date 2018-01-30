@@ -27,7 +27,9 @@
             android:value="c7fedc1895af22d0c988811afb37275b1e0fcd4b" />
 
         <activity
-            android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <meta-data
@@ -35,7 +37,8 @@
             android:value="c7fedc1895af22d0c988811afb37275b1e0fcd4b" />
 
         <activity android:name=".LauncherViewActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTask">
 
         </activity>
 
