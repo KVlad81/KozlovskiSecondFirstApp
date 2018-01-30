@@ -46,7 +46,7 @@ public class FirstPageActivity extends AppCompatActivity {
             if (thirdPageTheme == 2) {
                 ((RadioButton)findViewById(R.id.radioButton6)).setChecked(false);
                 ((RadioButton)findViewById(R.id.radioButton7)).setChecked(true);
-                ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackground(getDrawable(R.drawable.customborder));
+                ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackground(getDrawable(R.color.gray));
             }
         }
 
