@@ -31,7 +31,7 @@ public class FirstPageActivity extends AppCompatActivity {
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_first_page);
 
-
+        getSupportActionBar().hide();
         welcomePages = (ViewFlipper) findViewById(R.id.viewflipper);
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -75,7 +75,7 @@ public class FirstPageActivity extends AppCompatActivity {
                         addForthPageRadioButtonListeners();
                     }
                 } else {
-                    Intent nextScreen = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent nextScreen = new Intent(getApplicationContext(), NavigationViewActivity.class);
                     startActivity(nextScreen);
                 }
             }

@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView4"
         android:layout_marginStart="@dimen/basic_mergin"
-        android:layout_marginTop="@dimen/application_name_margin_left_land"
+        android:layout_marginTop="@dimen/application_name_margin_left"
         android:layout_toEndOf="@+id/imageView4"
         android:text="@string/kozlovski_first_application"
         android:textSize="@dimen/application_name_size"

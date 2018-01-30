@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="firstPageImageWidth">174dp</dimen>
@@ -8,8 +9,9 @@
     <dimen name="application_image_width">174dp</dimen>
     <dimen name="application_image_height">174dp</dimen>
     <dimen name="application_description_size">18sp</dimen>
-    <dimen name="view_flipper_height">410dp</dimen>
-    <dimen name="view_flipper_width">368dp</dimen>
+    <dimen name="application_name_margin_left">40dp</dimen>
+    <dimen name="view_flipper_height">225dp</dimen>
+    <dimen name="view_flipper_width">576dp</dimen>
     <dimen name="button_next_margin_top">450dp</dimen>
     <dimen name="item_offset">8dp</dimen>
 </resources>
