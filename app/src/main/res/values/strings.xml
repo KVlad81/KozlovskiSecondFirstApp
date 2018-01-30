@@ -18,4 +18,6 @@
     <string name="plot">Плотный макет</string>
     <string name="_5_n_7">Портретная: 5 иконок в ряд\nЛандшафтная: 7 иконок в ряд</string>
     <string name="my_application_image">My application image</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
