@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/customborder">
 
         <Space
             android:layout_width="match_parent"
@@ -20,15 +21,17 @@
 
         <RadioButton
             android:id="@+id/radioButton"
+            android:layout_marginStart="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/standard"
             android:layout_weight="1"
             android:buttonTint="@color/darkGreen"
-            android:textSize="24sp"
+            android:textSize="23sp"
             android:textAlignment="center"/>
 
         <TextView
+            android:layout_marginStart="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_4_n_6"
@@ -45,7 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/customborder">
 
         <Space
             android:layout_width="match_parent"
@@ -54,6 +58,7 @@
 
 
         <RadioButton
+            android:layout_marginStart="20dp"
             android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,6 +69,7 @@
             android:textAlignment="center"/>
 
         <TextView
+            android:layout_marginStart="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_5_n_7"

@@ -10,7 +10,8 @@ android:layout_height="match_parent">
         android:layout_height="@dimen/firstPageImageHeight"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/oooo" />
+        android:src="@drawable/oooo"
+        android:contentDescription="@string/myphoto" />
 
     <TextView
         android:id="@+id/textView5"

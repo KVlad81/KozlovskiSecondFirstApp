@@ -10,4 +10,10 @@
     <dimen name="application_image_width">174dp</dimen>
     <dimen name="application_image_height">174dp</dimen>
     <dimen name="application_description_size">18sp</dimen>
+    <dimen name="application_name_margin_left_land">40dp</dimen>
+    <dimen name="view_flipper_height">410dp</dimen>
+    <dimen name="view_flipper_width">368dp</dimen>
+    <dimen name="button_next_margin_top">450dp</dimen>
+    <dimen name="view_flipper_horizontal_width">576dp</dimen>
+    <dimen name="view_flipper_land_height">225dp</dimen>
 </resources>

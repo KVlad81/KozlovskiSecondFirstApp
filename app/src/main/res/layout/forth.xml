@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/customborder">
 
         <Space
             android:layout_width="match_parent"
@@ -26,12 +27,14 @@
             android:layout_weight="1"
             android:buttonTint="@color/darkGreen"
             android:textSize="24sp"
+            android:layout_marginStart="20dp"
             android:textAlignment="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_4_n_6"
+            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:textSize="18sp"/>
 
@@ -45,7 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/customborder">
 
         <Space
             android:layout_width="match_parent"
@@ -61,6 +65,7 @@
             android:layout_weight="1"
             android:buttonTint="@color/darkGreen"
             android:textSize="24sp"
+            android:layout_marginStart="20dp"
             android:textAlignment="center"/>
 
         <TextView
@@ -68,7 +73,8 @@
             android:layout_height="wrap_content"
             android:text="@string/_5_n_7"
             android:layout_weight="1"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_marginStart="20dp"/>
 
         <Space
             android:layout_width="match_parent"
