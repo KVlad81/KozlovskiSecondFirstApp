@@ -1,5 +1,6 @@
 package com.example.vlad81.kozlovskifirstapplication.launcher;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -38,7 +39,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View v) {
-                Snackbar.make(v, "position = " + position, Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(v, "color = " + Integer.toHexString(mData.get(position)), Snackbar.LENGTH_SHORT).show();
                 return true;
             }
         });

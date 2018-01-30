@@ -26,11 +26,13 @@ public class LauncherViewActivity extends AppCompatActivity
 
     public LauncherViewActivity(){}
 
+    private int isPlot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_navigation_view);
-
+        isPlot = getIntent().getIntExtra("isPlot", 1);
         createGridLayout();
     }
 
@@ -40,7 +42,12 @@ public class LauncherViewActivity extends AppCompatActivity
         final int offset = getResources().getDimensionPixelSize(R.dimen.item_offset);
         recyclerView.addItemDecoration(new OffsetItemDecoration(offset));
 
-        final int spanCount = getResources().getInteger(R.integer.span_count);
+        final int spanCount;
+        if (isPlot == 1) {
+            spanCount = getResources().getInteger(R.integer.span_count);
+        } else {
+            spanCount = getResources().getInteger(R.integer.plot_span_count);
+        }
         final GridLayoutManager layoutManager = new GridLayoutManager(this, spanCount);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -60,6 +67,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
         return colors;
     }
+
 
     /*@Override
     public void onBackPressed() {

@@ -75,6 +75,7 @@ public class FirstPageActivity extends AppCompatActivity {
                     }
                 } else {
                     Intent nextScreen = new Intent(getApplicationContext(), LauncherViewActivity.class);
+                    nextScreen.putExtra("isPlot", forthPageTheme);
                     startActivity(nextScreen);
                 }
             }
