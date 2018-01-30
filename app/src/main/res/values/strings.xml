@@ -4,4 +4,18 @@
     <string name="kozlovski_vladislav">Kozlovski Vladislav</string>
     <string name="myphoto">MyPhoto</string>
     <string name="github_kvlad81">GitHub: KVlad81</string>
+    <string name="next">Далее</string>
+    <string name="kozlovski_first_application">Kozlovski First Application</string>
+    <string name="welcome_to_my_application">Welcome to my application</string>
+    <string name="firstpageimage">FirstPageImage</string>
+    <string name="application_description">This is my first application</string>
+    <string name="secondpageimage">secondPageImage</string>
+    <string name="secondpagehorizontalimage">secondPageHorizontalImage</string>
+    <string name="light_theme">Светлая тема</string>
+    <string name="dark_theme">Темная тема</string>
+    <string name="_4_n_6">Портретная: 4 иконки в ряд \nЛандшафтная: 6 иконок в ряд</string>
+    <string name="standard">Стандартный макет</string>
+    <string name="plot">Плотный макет</string>
+    <string name="_5_n_7">Портретная: 5 иконок в ряд\nЛандшафтная: 7 иконок в ряд</string>
+    <string name="my_application_image">My application image</string>
 </resources>

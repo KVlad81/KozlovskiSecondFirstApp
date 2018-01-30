@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/application_image_width"
+        android:layout_height="@dimen/application_image_height"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/basic_mergin"
+        android:contentDescription="@string/secondpagehorizontalimage"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_marginStart="@dimen/basic_mergin"
+        android:layout_marginTop="@dimen/application_name_margin_left_land"
+        android:layout_toEndOf="@+id/imageView4"
+        android:text="@string/kozlovski_first_application"
+        android:textSize="@dimen/application_name_size"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="@dimen/basic_mergin"
+        android:text="@string/application_description"
+        android:textSize="@dimen/application_description_size"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+</RelativeLayout>

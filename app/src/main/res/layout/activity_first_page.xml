@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vlad81.kozlovskifirstapplication.FirstPageActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darkGreen"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/button_next_margin_top"
+        android:layout_marginBottom="@dimen/basic_mergin"
+        />
+
+    <ViewFlipper
+        android:id="@+id/viewflipper"
+        android:layout_width="@dimen/view_flipper_width"
+        android:layout_height="@dimen/view_flipper_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/basic_mergin"
+        >
+
+
+    </ViewFlipper>
+
+</FrameLayout>
