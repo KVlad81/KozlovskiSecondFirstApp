@@ -69,15 +69,11 @@ public class LauncherViewActivity extends AppCompatActivity
     }
 
 
-    /*@Override
+    @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }*/
+        Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(toMyPage);
+    }
 
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
