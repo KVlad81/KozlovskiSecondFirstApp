@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.shad.shad2018_practical3.launcher.SquareView
+<com.example.vlad81.kozlovskifirstapplication.launcher.SquareView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/launcher_image"
     android:layout_width="match_parent"
