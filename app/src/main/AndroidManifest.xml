@@ -34,7 +34,7 @@
             android:name="io.fabric.ApiKey"
             android:value="c7fedc1895af22d0c988811afb37275b1e0fcd4b" />
 
-        <activity android:name=".NavigationViewActivity"
+        <activity android:name=".LauncherViewActivity"
             android:parentActivityName=".MainActivity">
 
         </activity>

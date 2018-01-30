@@ -16,12 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class NavigationViewActivity extends AppCompatActivity
+public class LauncherViewActivity extends AppCompatActivity
         /*implements NavigationView.OnNavigationItemSelectedListener*/ {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_navigation_view);
         /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
