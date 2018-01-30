@@ -3,6 +3,7 @@ package com.example.vlad81.kozlovskifirstapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -29,6 +30,8 @@ public class FirstPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_first_page);
+
+
         welcomePages = (ViewFlipper) findViewById(R.id.viewflipper);
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -43,7 +46,7 @@ public class FirstPageActivity extends AppCompatActivity {
             if (thirdPageTheme == 2) {
                 ((RadioButton)findViewById(R.id.radioButton6)).setChecked(false);
                 ((RadioButton)findViewById(R.id.radioButton7)).setChecked(true);
-                ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackgroundColor(Color.rgb(0xC0, 0xC0, 0xC0));
+                ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackground(getDrawable(R.drawable.customborder));
             }
         }
 
@@ -106,7 +109,7 @@ public class FirstPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 darkTheme.setChecked(false);
                 thirdPageTheme = 1;
-                ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackgroundColor(0xFFFFFF);
+                ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackground(getDrawable(R.drawable.customborder));
             }
         });
         darkTheme.setOnClickListener(new View.OnClickListener() {

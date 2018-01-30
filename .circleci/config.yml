@@ -38,6 +38,8 @@ jobs:
           name: Deploy APK.
           command: |
            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-             bash ./Scripts/deploy-hockey.sh
              bash ./Scripts/deploy-fabric.sh
+           fi
+           if [ "${CIRCLE_BRANCH}" == "dev" ]; then
+             bash ./Scripts/deploy-hockey.sh
            fi
