@@ -24,6 +24,8 @@ import java.util.Random;
 public class LauncherViewActivity extends AppCompatActivity
         /*implements NavigationView.OnNavigationItemSelectedListener*/ {
 
+    public LauncherViewActivity(){}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
