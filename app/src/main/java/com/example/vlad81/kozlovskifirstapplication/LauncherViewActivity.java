@@ -28,7 +28,7 @@ public class LauncherViewActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation_view);
+        setContentView(R.layout.app_bar_navigation_view);
 
         createGridLayout();
     }
