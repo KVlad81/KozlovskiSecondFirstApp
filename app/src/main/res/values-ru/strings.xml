@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Настройки</string>
+    <string name="kozlovski_vladislav">Козловский Владислав</string>
+    <string name="welcome_to_my_application">Добро пожаловать в мое приложение</string>
+    <string name="application_description">Это мое первое приложение</string>
+    <string name="light_theme">Светлая тема</string>
+    <string name="dark_theme">Темная тема</string>
+    <string name="_4_n_6">Портретная: 4 иконки в ряду \nЛандшафтная: 6 иконок в ряду</string>
+    <string name="standard">Стандратный макет</string>
+    <string name="plot">Плотный макет</string>
+    <string name="_5_n_7">Портретная: 5 иконок в ряду \nЛандшафтная: 7 иконок в ряду</string>
+    <string name="next">Далее</string>
+</resources>

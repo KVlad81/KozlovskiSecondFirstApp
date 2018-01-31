@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">設置</string>
+    <string name="kozlovski_vladislav">科茲洛夫斯基弗拉季斯拉夫</string>
+    <string name="welcome_to_my_application">歡迎來到我的申請</string>
+    <string name="application_description">這是我的第一個應用程序</string>
+    <string name="light_theme">輕的主題</string>
+    <string name="dark_theme">黑暗的主題</string>
+    <string name="_4_n_6">肖像：連續4個圖標\n景觀：連續6個圖標</string>
+    <string name="standard">標準佈局</string>
+    <string name="plot">密集的佈局</string>
+    <string name="_5_n_7">肖像：連續5個圖標\n景觀：連續7個圖標</string>
+    <string name="next">下一個</string>
+</resources>

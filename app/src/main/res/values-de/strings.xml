@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">die Einstellungen</string>
+    <string name="kozlovski_vladislav">Kozlovski Vladislav</string>
+    <string name="welcome_to_my_application">Willkommen zu meiner Bewerbung</string>
+    <string name="application_description">Dies ist meine erste Bewerbung</string>
+    <string name="light_theme">Helles Thema</string>
+    <string name="dark_theme">Dunkles Thema</string>
+    <string name="_4_n_6">Portrait: 4 Icons in einer Reihe \nLandschaft: 6 Icons in einer Reihe</string>
+    <string name="standard">Standardentwurf</string>
+    <string name="plot">Dichtes Layout</string>
+    <string name="_5_n_7">Portrait: 5 Icons in einer Reihe\nLandschaft: 7 Symbole in einer Reihe</string>
+    <string name="next">Nächster</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Nustatymai</string>
+    <string name="kozlovski_vladislav">Kozlovskis Vladislavas</string>
+    <string name="welcome_to_my_application">Sveiki atvykę į mano pirmąją programą</string>
+    <string name="application_description">Tai mano pirmoji programa</string>
+    <string name="light_theme">Šviesos tema</string>
+    <string name="dark_theme">Tamsi tema</string>
+    <string name="_4_n_6">Portretas: 4 piktogramos iš eilės \nKraštovaizdis: 6 piktogramos iš eilės</string>
+    <string name="standard">Standartinis išdėstymas</string>
+    <string name="plot">Tankus išdėstymas</string>
+    <string name="_5_n_7">Portretas: 5 piktogramos iš eilės \nKraštovaizdis: 7 piktogramos iš eilės</string>
+    <string name="next">Kitas</string>
+</resources>

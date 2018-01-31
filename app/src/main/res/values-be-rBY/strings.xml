@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Налады</string>
+    <string name="kozlovski_vladislav">Казлоўскі Уладзіслаў</string>
+    <string name="next">Далей</string>
+    <string name="welcome_to_my_application">Сардэчна запрашаю у маё першае прыкладанне</string>
+    <string name="application_description">Гэта маё першае пркладанне</string>
+    <string name="light_theme">Светлая тэма</string>
+    <string name="dark_theme">Цёмная тэма</string>
+    <string name="_4_n_6">Партрэтная: 4 абразкі ў радку\nЛандшафтная: 6 абразкоў у радку</string>
+    <string name="standard">Стандартны макет</string>
+    <string name="plot">Шчыльны макет</string>
+    <string name="_5_n_7">Партрэтная: 5 абразкоў у радку \nЛандшафтная: 7 абразкоў у радку</string>
+</resources>
