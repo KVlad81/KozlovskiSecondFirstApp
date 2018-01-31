@@ -38,7 +38,8 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         final View view = gridHolder.getImageView();
         view.setBackgroundColor(mData.get(position));
         TextView itemTextView = view.findViewById(R.id.item_text);
-        itemTextView.setText("#"+Integer.toHexString(mData.get(position)).substring(2));
+        String text = "#"+Integer.toHexString(mData.get(position)).substring(2);
+        itemTextView.setText(text);
 
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
