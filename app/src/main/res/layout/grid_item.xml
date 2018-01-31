@@ -17,6 +17,6 @@
         android:text="@string/you_didn_t_change_text"
         android:textAlignment="center"
         android:textSize="23sp"
-        android:id="@+id/item_text"
+        android:id="@+id/griditem_text"
         android:lines="1"/>
 </LinearLayout>

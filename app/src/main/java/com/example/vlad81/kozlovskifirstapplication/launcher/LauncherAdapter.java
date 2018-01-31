@@ -37,7 +37,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private void bindGridView(@NonNull final Holder.GridHolder gridHolder, final int position) {
         final View view = gridHolder.getImageView();
         view.setBackgroundColor(mData.get(position));
-        TextView itemTextView = view.findViewById(R.id.item_text);
+        TextView itemTextView = view.findViewById(R.id.griditem_text);
         String text = "#"+Integer.toHexString(mData.get(position)).substring(2);
         itemTextView.setText(text);
 
