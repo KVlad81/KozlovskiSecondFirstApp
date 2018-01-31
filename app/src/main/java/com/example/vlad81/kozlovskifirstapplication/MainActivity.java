@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().show();
+
         ImageView myPhoto = (ImageView) findViewById(R.id.imageView);
         myPhoto.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
