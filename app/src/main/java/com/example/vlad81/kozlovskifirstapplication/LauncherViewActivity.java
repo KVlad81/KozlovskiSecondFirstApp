@@ -32,7 +32,6 @@ public class LauncherViewActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_navigation_view);
-        getSupportActionBar().hide();
         isPlot = getIntent().getIntExtra("isPlot", 1);
         createGridLayout();
     }
