@@ -20,4 +20,6 @@
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="next">Next</string>
+    <string name="color">Color</string>
+    <string name="you_didn_t_change_text">You didn\'t change text</string>
 </resources>

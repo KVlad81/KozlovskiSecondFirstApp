@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import com.example.vlad81.kozlovskifirstapplication.R;
@@ -36,10 +37,13 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private void bindGridView(@NonNull final Holder.GridHolder gridHolder, final int position) {
         final View view = gridHolder.getImageView();
         view.setBackgroundColor(mData.get(position));
+        TextView itemTextView = view.findViewById(R.id.item_text);
+        itemTextView.setText("#"+Integer.toHexString(mData.get(position)).substring(2));
+
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View v) {
-                Snackbar.make(v, "color = " + Integer.toHexString(mData.get(position)), Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(v, "color = " + Integer.toHexString(mData.get(position)).substring(2), Snackbar.LENGTH_SHORT).show();
                 return true;
             }
         });
