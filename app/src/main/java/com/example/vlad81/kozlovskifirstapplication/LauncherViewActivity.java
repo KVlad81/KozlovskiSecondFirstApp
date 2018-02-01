@@ -62,7 +62,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.launcher_activity);
+        //navigationView.setCheckedItem(R.id.launcher_activity);
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
         final View profileImage = navigationHeaderView.findViewById(R.id.imageView);
@@ -125,14 +125,11 @@ public class LauncherViewActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.launcher_activity) {
-
-        } else if (id == R.id.list_activity) {
-            Intent toListActivity = new Intent(this, LinearLayoutActivity.class);
+        if (id == R.id.list_activity) {
+            Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
             startActivity(toListActivity);
-            finish();
         } else if (id == R.id.settings) {
-
+            //TODO
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
