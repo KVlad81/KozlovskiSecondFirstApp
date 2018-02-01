@@ -39,6 +39,6 @@
         android:id="@+id/grid_linear_description"
         android:text="@string/this_is_description_text"
         />
-        
+
     </LinearLayout>
 </LinearLayout>

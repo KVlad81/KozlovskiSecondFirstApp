@@ -1,6 +1,8 @@
 package com.example.vlad81.kozlovskifirstapplication.linear_launcher;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -38,7 +40,8 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private void bindGridView(@NonNull final Holder.GridHolder gridHolder, final int position) {
         final View view = gridHolder.getImageView();
-        view.setBackgroundColor(mData.get(position));
+        Drawable background = view.getBackground();
+        background.setColorFilter(mData.get(position), PorterDuff.Mode.MULTIPLY);
         TextView itemTextView = gridHolder.itemView.findViewById(R.id.griditem_text);
         String text = "#"+Integer.toHexString(mData.get(position)).substring(2);
         itemTextView.setText(text);
