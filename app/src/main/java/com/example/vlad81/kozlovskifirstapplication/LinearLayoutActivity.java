@@ -73,7 +73,7 @@ public class LinearLayoutActivity extends AppCompatActivity
         });
 
 
-        final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.linear_fab);
         addNewItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
