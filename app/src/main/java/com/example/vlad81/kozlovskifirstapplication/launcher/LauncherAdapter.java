@@ -60,6 +60,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         notifyDataSetChanged();
                     }
                 });
+                snackbar.show();
                 return true;
             }
         });
