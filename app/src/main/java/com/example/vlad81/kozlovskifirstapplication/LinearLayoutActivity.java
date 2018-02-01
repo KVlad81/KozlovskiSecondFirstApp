@@ -10,14 +10,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.LauncherAdapter;
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.OffsetItemDecoration;
@@ -50,16 +48,6 @@ public class LinearLayoutActivity extends AppCompatActivity
         if (bar != null) {
             bar.hide();
         }
-
-        ImageView myPhoto = (ImageView)findViewById(R.id.imageView);
-        myPhoto.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(toMyPage);
-                return true;
-            }
-        });
 
         final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
         addNewItemButton.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +131,9 @@ public class LinearLayoutActivity extends AppCompatActivity
 
         } else if (id == R.id.settings) {
 
+        } else if (id == R.id.imageView) {
+            Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(toMyPage);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

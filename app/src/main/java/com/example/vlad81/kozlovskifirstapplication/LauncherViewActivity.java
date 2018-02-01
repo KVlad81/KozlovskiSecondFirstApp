@@ -51,16 +51,6 @@ public class LauncherViewActivity extends AppCompatActivity
             bar.hide();
         }
 
-        ImageView myPhoto = (ImageView)findViewById(R.id.imageView);
-        myPhoto.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(toMyPage);
-                return true;
-            }
-        });
-
         final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
         addNewItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +138,9 @@ public class LauncherViewActivity extends AppCompatActivity
             startActivity(toListActivity);
         } else if (id == R.id.settings) {
 
+        } else if (id == R.id.imageView) {
+            Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(toMyPage);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
