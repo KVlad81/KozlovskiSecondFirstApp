@@ -23,4 +23,7 @@
     <string name="color">Color</string>
     <string name="you_didn_t_change_text" translatable="false">You didn\'t change text</string>
     <string name="this_is_description_text" translatable="false">This is description text</string>
+    <string name="yes">YES</string>
+    <string name="launcher_activity" translatable="false">Launcher activity</string>
+    <string name="list_activity" translatable="false">List activity</string>
 </resources>

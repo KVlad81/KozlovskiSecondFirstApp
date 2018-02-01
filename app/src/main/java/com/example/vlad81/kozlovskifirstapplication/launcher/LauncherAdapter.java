@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,8 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     }
 
+    public static final String TAG = "LauncherAdapter";
+
     private void bindGridView(@NonNull final Holder.GridHolder gridHolder, final int position) {
         final View view = gridHolder.getImageView();
         view.setBackgroundColor(mData.get(position));
@@ -53,12 +56,46 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             @Override
             public boolean onLongClick(final View v) {
                 Snackbar snackbar = Snackbar.make(v, "Do you really want to delete this item?", 5000);
-                snackbar.setAction("YES", new View.OnClickListener() {
+                snackbar.setAction(context.getString(R.string.yes), new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         gridHolder.getListIterator().next();
                         gridHolder.getListIterator().remove();
                         notifyDataSetChanged();
+                        Log.i(TAG, "Deleted item at position "+position);
+                    }
+                });
+                snackbar.addCallback(new Snackbar.Callback(){
+                    @Override
+                    public void onShown(Snackbar sb) {
+                        Log.i(TAG, "Snackbar at position " + position + " was shown.");
+                    }
+
+                    @Override
+                    public void onDismissed(Snackbar transientBottomBar, int event) {
+                        switch (event) {
+                            case Snackbar.Callback.DISMISS_EVENT_ACTION:
+                                Log.i(TAG, "Snackbar at position"+ position +
+                                        " was dismissed via an action click.");
+                                break;
+                            case Snackbar.Callback.DISMISS_EVENT_CONSECUTIVE:
+                                Log.i(TAG, "Snackbar at position"+ position +
+                                        " was from a new Snackbar being shown.");
+                                break;
+                            case Snackbar.Callback.DISMISS_EVENT_MANUAL:
+                                Log.i(TAG, "Snackbar at position"+ position +
+                                        " was dismissed via a call to dismiss().");
+                                break;
+                            case Snackbar.Callback.DISMISS_EVENT_SWIPE:
+                                Log.i(TAG, "Snackbar at position"+ position +
+                                        " was dismissed via a swipe.");
+                                break;
+                            case Snackbar.Callback.DISMISS_EVENT_TIMEOUT:
+                                Log.i(TAG, "Snackbar at position"+ position +
+                                        " was dismissed via a timeout.");
+                                break;
+
+                        }
                     }
                 });
                 snackbar.show();

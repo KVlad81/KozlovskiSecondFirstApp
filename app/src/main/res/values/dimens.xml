@@ -12,4 +12,8 @@
     <dimen name="view_flipper_width">368dp</dimen>
     <dimen name="button_next_margin_top">450dp</dimen>
     <dimen name="item_offset">8dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
 </resources>

@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -24,7 +27,7 @@ import java.util.List;
 import java.util.Random;
 
 public class LauncherViewActivity extends AppCompatActivity
-        /*implements NavigationView.OnNavigationItemSelectedListener*/ {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     public LauncherViewActivity(){}
 
@@ -33,11 +36,13 @@ public class LauncherViewActivity extends AppCompatActivity
     static final Random rand = new Random();
     private LauncherAdapter adapter;
 
+    public static final String TAG = "LauncherViewActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_bar_navigation_view);
+        setContentView(R.layout.activity_navigation_view);
         isPlot = getIntent().getIntExtra("isPlot", 1);
 
         final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
@@ -47,6 +52,7 @@ public class LauncherViewActivity extends AppCompatActivity
                 int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
                 mData.add(0,color);
                 adapter.notifyDataSetChanged();
+                Log.i(TAG, "Inserted new element at start.");
             }
         });
 
@@ -91,14 +97,14 @@ public class LauncherViewActivity extends AppCompatActivity
         startActivity(toMyPage);
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation_view, menu);
         return true;
-    }*/
+    }
 
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -111,9 +117,9 @@ public class LauncherViewActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
-    /*@SuppressWarnings("StatementWithEmptyBody")
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -125,16 +131,10 @@ public class LauncherViewActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }*/
+    }
 }

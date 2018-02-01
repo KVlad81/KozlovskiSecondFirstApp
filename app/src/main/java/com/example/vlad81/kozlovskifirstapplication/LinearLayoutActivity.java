@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.LauncherAdapter;
@@ -20,6 +21,8 @@ import java.util.Random;
 
 
 public class LinearLayoutActivity extends AppCompatActivity {
+
+    private static final String TAG = "LinearLayoutActivity";
 
     public LinearLayoutActivity() {}
 
@@ -41,6 +44,7 @@ public class LinearLayoutActivity extends AppCompatActivity {
                 int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
                 mData.add(0,color);
                 adapter.notifyDataSetChanged();
+                Log.i(TAG, "Inserted new element at start.");
             }
         });
 
