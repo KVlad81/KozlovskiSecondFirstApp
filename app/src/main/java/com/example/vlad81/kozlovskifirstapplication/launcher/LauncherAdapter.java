@@ -29,7 +29,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
-        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_linear_item, parent, false);
+        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_item, parent, false);
         return new Holder.GridHolder(view);
     }
 
