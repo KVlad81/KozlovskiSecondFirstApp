@@ -35,7 +35,9 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-        bindGridView((Holder.GridHolder) holder, position);
+        Holder.GridHolder myHolder = (Holder.GridHolder) holder;
+        myHolder.setListIterator(mData.listIterator(position));
+        bindGridView(myHolder, position);
     }
 
     private void bindGridView(@NonNull final Holder.GridHolder gridHolder, final int position) {
@@ -48,14 +50,22 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         String description = mData.toString();
         TextView descriptionTextView = gridHolder.itemView.findViewById(R.id.grid_linear_description);
-        if (descriptionTextView != null) {
-            descriptionTextView.setText(description);
-        }
+        descriptionTextView.setText(description);
+
 
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View v) {
-                Snackbar.make(v, context.getString(R.string.color)+" = " + Integer.toHexString(mData.get(position)).substring(2), Snackbar.LENGTH_SHORT).show();
+                Snackbar snackbar = Snackbar.make(v, "Do you really want to delete this item?", 5000);
+                snackbar.setAction("YES", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        gridHolder.getListIterator().next();
+                        gridHolder.getListIterator().remove();
+                        notifyDataSetChanged();
+                    }
+                });
+                snackbar.show();
                 return true;
             }
         });
