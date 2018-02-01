@@ -56,6 +56,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 snackbar.setAction("YES", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        gridHolder.getListIterator().next();
                         gridHolder.getListIterator().remove();
                         notifyDataSetChanged();
                     }
