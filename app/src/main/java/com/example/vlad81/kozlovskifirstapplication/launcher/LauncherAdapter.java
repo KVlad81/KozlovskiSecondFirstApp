@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.vlad81.kozlovskifirstapplication.R;
 
 import java.util.List;
+import java.util.ListIterator;
 
 public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -35,7 +36,10 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-        bindGridView((Holder.GridHolder) holder, position);
+        Holder.GridHolder myHodler = (Holder.GridHolder) holder;
+        myHodler.setListIterator(mData.listIterator(position));
+        bindGridView(myHodler, position);
+
     }
 
     private void bindGridView(@NonNull final Holder.GridHolder gridHolder, final int position) {
@@ -48,7 +52,14 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View v) {
-                Snackbar.make(v, context.getString(R.string.color)+" = " + Integer.toHexString(mData.get(position)).substring(2), Snackbar.LENGTH_SHORT).show();
+                Snackbar snackbar = Snackbar.make(v, "Do you really want to delete this item?", 5000);
+                snackbar.setAction("YES", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        gridHolder.getListIterator().remove();
+                        notifyDataSetChanged();
+                    }
+                });
                 return true;
             }
         });
