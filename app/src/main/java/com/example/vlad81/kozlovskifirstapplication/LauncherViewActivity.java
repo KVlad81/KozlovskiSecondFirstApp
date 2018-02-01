@@ -133,7 +133,12 @@ public class LauncherViewActivity extends AppCompatActivity
 
         if (id == R.id.list_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
-            navigationView.setCheckedItem(R.id.list_activity);
+            navigationView.post(new Runnable() {
+                @Override
+                public void run() {
+                    navigationView.setCheckedItem(R.id.list_activity);
+                }
+            });
             startActivity(toListActivity);
         } else if (id == R.id.settings) {
             //TODO

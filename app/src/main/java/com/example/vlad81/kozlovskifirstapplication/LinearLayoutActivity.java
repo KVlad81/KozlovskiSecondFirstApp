@@ -128,7 +128,12 @@ public class LinearLayoutActivity extends AppCompatActivity
 
         if (id == R.id.launcher_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LauncherViewActivity.class);
-            navigationView.setCheckedItem(R.id.launcher_activity);
+            navigationView.post(new Runnable() {
+                @Override
+                public void run() {
+                    navigationView.setCheckedItem(R.id.launcher_activity);
+                }
+            });
             startActivity(toListActivity);
         } else if (id == R.id.list_activity) {
 
