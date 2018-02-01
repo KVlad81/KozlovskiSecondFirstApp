@@ -3,11 +3,13 @@ package com.example.vlad81.kozlovskifirstapplication;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.LauncherAdapter;
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.OffsetItemDecoration;
@@ -16,17 +18,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
 public class LinearLayoutActivity extends AppCompatActivity {
 
     public LinearLayoutActivity() {}
 
-    //private int isPlot;
+    private List<Integer> mData;
+    static final Random rand = new Random();
+    private LauncherAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_navigation_view);
         //isPlot = getIntent().getIntExtra("isPlot", 1);
+
+        final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
+        addNewItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+                mData.add(0,color);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
         createGridLayout();
     }
 
@@ -39,9 +56,9 @@ public class LinearLayoutActivity extends AppCompatActivity {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        final List<Integer> data = generateData();
-        final LauncherAdapter launcherAdapter = new LauncherAdapter(data, getApplicationContext());
-        recyclerView.setAdapter(launcherAdapter);
+        mData = generateData();
+        adapter = new LauncherAdapter(mData, getApplicationContext());
+        recyclerView.setAdapter(adapter);
     }
 
     @NonNull
