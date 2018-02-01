@@ -41,6 +41,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
     public static final String TAG = "LauncherViewActivity";
 
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class LauncherViewActivity extends AppCompatActivity
         toggle.syncState();
 
 
-        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.post(new Runnable() {
             @Override
@@ -132,6 +133,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
         if (id == R.id.list_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
+            navigationView.setCheckedItem(R.id.list_activity);
             startActivity(toListActivity);
         } else if (id == R.id.settings) {
             //TODO

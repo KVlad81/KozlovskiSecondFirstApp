@@ -38,6 +38,7 @@ public class LinearLayoutActivity extends AppCompatActivity
     private List<Integer> mData;
     static final Random rand = new Random();
     private LauncherAdapter adapter;
+    private NavigationView navigationView;
 
 
     @Override
@@ -59,12 +60,12 @@ public class LinearLayoutActivity extends AppCompatActivity
         toggle.syncState();
 
 
-        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.post(new Runnable() {
             @Override
             public void run() {
-                navigationView.setCheckedItem(R.id.launcher_activity);
+                navigationView.setCheckedItem(R.id.list_activity);
             }
         });
 
@@ -127,14 +128,12 @@ public class LinearLayoutActivity extends AppCompatActivity
 
         if (id == R.id.launcher_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LauncherViewActivity.class);
+            navigationView.setCheckedItem(R.id.launcher_activity);
             startActivity(toListActivity);
         } else if (id == R.id.list_activity) {
 
         } else if (id == R.id.settings) {
 
-        } else if (id == R.id.imageView) {
-            Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(toMyPage);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
