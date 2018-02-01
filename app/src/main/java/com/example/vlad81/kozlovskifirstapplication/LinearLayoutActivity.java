@@ -9,8 +9,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.vlad81.kozlovskifirstapplication.launcher.LauncherAdapter;
-import com.example.vlad81.kozlovskifirstapplication.launcher.OffsetItemDecoration;
+import com.example.vlad81.kozlovskifirstapplication.linear_launcher.LauncherAdapter;
+import com.example.vlad81.kozlovskifirstapplication.linear_launcher.OffsetItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

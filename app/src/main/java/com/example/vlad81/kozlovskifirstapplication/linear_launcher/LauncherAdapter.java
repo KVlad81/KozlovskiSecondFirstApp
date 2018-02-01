@@ -1,7 +1,6 @@
-package com.example.vlad81.kozlovskifirstapplication.launcher;
+package com.example.vlad81.kozlovskifirstapplication.linear_launcher;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 
 import com.example.vlad81.kozlovskifirstapplication.R;
 
@@ -29,7 +27,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
-        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_item, parent, false);
+        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_linear_item, parent, false);
         return new Holder.GridHolder(view);
     }
 
@@ -44,6 +42,12 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         TextView itemTextView = gridHolder.itemView.findViewById(R.id.griditem_text);
         String text = "#"+Integer.toHexString(mData.get(position)).substring(2);
         itemTextView.setText(text);
+
+        String description = mData.toString();
+        TextView descriptionTextView = gridHolder.itemView.findViewById(R.id.grid_linear_description);
+        if (descriptionTextView != null) {
+            descriptionTextView.setText(description);
+        }
 
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
