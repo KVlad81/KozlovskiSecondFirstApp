@@ -8,7 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +16,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 
 import com.example.vlad81.kozlovskifirstapplication.launcher.LauncherAdapter;
 import com.example.vlad81.kozlovskifirstapplication.launcher.OffsetItemDecoration;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -44,6 +44,22 @@ public class LauncherViewActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
         isPlot = getIntent().getIntExtra("isPlot", 1);
+
+        ActionBar bar = getSupportActionBar();
+
+        if (bar != null) {
+            bar.hide();
+        }
+
+        ImageView myPhoto = (ImageView)findViewById(R.id.imageView);
+        myPhoto.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(toMyPage);
+                return true;
+            }
+        });
 
         final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
         addNewItemButton.setOnClickListener(new View.OnClickListener() {
@@ -125,11 +141,12 @@ public class LauncherViewActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.launcher_activity) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.list_activity) {
+            Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
+            startActivity(toListActivity);
+        } else if (id == R.id.settings) {
 
         }
 

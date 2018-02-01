@@ -4,13 +4,20 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.LauncherAdapter;
 import com.example.vlad81.kozlovskifirstapplication.linear_launcher.OffsetItemDecoration;
@@ -20,7 +27,8 @@ import java.util.List;
 import java.util.Random;
 
 
-public class LinearLayoutActivity extends AppCompatActivity {
+public class LinearLayoutActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "LinearLayoutActivity";
 
@@ -34,8 +42,24 @@ public class LinearLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_bar_navigation_view);
+        setContentView(R.layout.activity_linear_navigation_view);
         //isPlot = getIntent().getIntExtra("isPlot", 1);
+
+        ActionBar bar = getSupportActionBar();
+
+        if (bar != null) {
+            bar.hide();
+        }
+
+        ImageView myPhoto = (ImageView)findViewById(R.id.imageView);
+        myPhoto.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(toMyPage);
+                return true;
+            }
+        });
 
         final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
         addNewItemButton.setOnClickListener(new View.OnClickListener() {
@@ -84,14 +108,14 @@ public class LinearLayoutActivity extends AppCompatActivity {
         startActivity(toMyPage);
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation_view, menu);
         return true;
-    }*/
+    }
 
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -104,30 +128,25 @@ public class LinearLayoutActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
-    /*@SuppressWarnings("StatementWithEmptyBody")
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.launcher_activity) {
+            Intent toListActivity = new Intent(getApplicationContext(), LauncherViewActivity.class);
+            startActivity(toListActivity);
+        } else if (id == R.id.list_activity) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.settings) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }*/
+    }
 }
