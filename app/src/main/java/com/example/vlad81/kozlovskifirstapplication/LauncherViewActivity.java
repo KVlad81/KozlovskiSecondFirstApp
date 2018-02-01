@@ -31,6 +31,7 @@ public class LauncherViewActivity extends AppCompatActivity
     private int isPlot;
     private List<Integer> mData;
     static final Random rand = new Random();
+    private LauncherAdapter adapter;
 
 
     @Override
@@ -39,12 +40,13 @@ public class LauncherViewActivity extends AppCompatActivity
         setContentView(R.layout.app_bar_navigation_view);
         isPlot = getIntent().getIntExtra("isPlot", 1);
 
-        FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
         addNewItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
                 mData.add(0,color);
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -67,8 +69,8 @@ public class LauncherViewActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
 
         mData = generateData();
-        final LauncherAdapter launcherAdapter = new LauncherAdapter(mData, getApplicationContext());
-        recyclerView.setAdapter(launcherAdapter);
+        adapter = new LauncherAdapter(mData, getApplicationContext());
+        recyclerView.setAdapter(adapter);
     }
 
     @NonNull
