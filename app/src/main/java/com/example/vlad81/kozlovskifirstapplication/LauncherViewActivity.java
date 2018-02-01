@@ -128,8 +128,9 @@ public class LauncherViewActivity extends AppCompatActivity
         if (id == R.id.launcher_activity) {
 
         } else if (id == R.id.list_activity) {
-            Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
+            Intent toListActivity = new Intent(this, LinearLayoutActivity.class);
             startActivity(toListActivity);
+            finish();
         } else if (id == R.id.settings) {
 
         }

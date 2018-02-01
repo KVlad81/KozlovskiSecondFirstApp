@@ -120,8 +120,9 @@ public class LinearLayoutActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.launcher_activity) {
-            Intent toListActivity = new Intent(getApplicationContext(), LauncherViewActivity.class);
+            Intent toListActivity = new Intent(this, LauncherViewActivity.class);
             startActivity(toListActivity);
+            finish();
         } else if (id == R.id.list_activity) {
 
         } else if (id == R.id.settings) {
