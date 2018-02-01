@@ -62,7 +62,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.launcher_activity);
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
         final View profileImage = navigationHeaderView.findViewById(R.id.imageView);
@@ -118,13 +118,6 @@ public class LauncherViewActivity extends AppCompatActivity
         }
 
         return colors;
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        Intent toMyPage = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(toMyPage);
     }
 
     @Override
