@@ -60,7 +60,8 @@ public class LinearLayoutActivity extends AppCompatActivity
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        //navigationView.setCheckedItem(R.id.list_activity);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.list_activity);
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
         final View profileImage = navigationHeaderView.findViewById(R.id.imageView);

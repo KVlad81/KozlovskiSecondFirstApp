@@ -38,7 +38,6 @@ public class LauncherViewActivity extends AppCompatActivity
     private List<Integer> mData;
     static final Random rand = new Random();
     private LauncherAdapter adapter;
-    private DrawerLayout mDrawerLayout;
 
     public static final String TAG = "LauncherViewActivity";
 
@@ -53,7 +52,7 @@ public class LauncherViewActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -62,7 +61,8 @@ public class LauncherViewActivity extends AppCompatActivity
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        //navigationView.setCheckedItem(R.id.launcher_activity);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.launcher_activity);
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
         final View profileImage = navigationHeaderView.findViewById(R.id.imageView);
