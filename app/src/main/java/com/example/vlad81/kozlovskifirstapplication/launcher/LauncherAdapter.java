@@ -1,5 +1,6 @@
 package com.example.vlad81.kozlovskifirstapplication.launcher;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,10 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @NonNull
     private final List<Integer> mData;
 
-    public LauncherAdapter(@NonNull final List<Integer> data) {
+    private Context context;
+
+    public LauncherAdapter(@NonNull final List<Integer> data, Context context) {
+        this.context = context;
         mData = data;
     }
 
@@ -41,10 +45,16 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         String text = "#"+Integer.toHexString(mData.get(position)).substring(2);
         itemTextView.setText(text);
 
+        String description = mData.toString();
+        TextView descriptionTextView = gridHolder.itemView.findViewById(R.id.grid_linear_description);
+        if (descriptionTextView != null) {
+            descriptionTextView.setText(description);
+        }
+
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View v) {
-                Snackbar.make(v, "color = " + Integer.toHexString(mData.get(position)).substring(2), Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(v, context.getString(R.string.color)+" = " + Integer.toHexString(mData.get(position)).substring(2), Snackbar.LENGTH_SHORT).show();
                 return true;
             }
         });

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/you_didn_t_change_text"
         android:textAlignment="center"
-        android:textSize="23sp"
+        android:textSize="16sp"
         android:id="@+id/griditem_text"
         android:lines="1"/>
 </LinearLayout>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -74,8 +75,8 @@ public class FirstPageActivity extends AppCompatActivity {
                         addForthPageRadioButtonListeners();
                     }
                 } else {
-                    Intent nextScreen = new Intent(getApplicationContext(), LauncherViewActivity.class);
-                    nextScreen.putExtra("isPlot", forthPageTheme);
+                    Intent nextScreen = new Intent(getApplicationContext(), LinearLayoutActivity.class);
+                    //nextScreen.putExtra("isPlot", forthPageTheme);
                     firstPage = 0;
                     startActivity(nextScreen);
                 }
