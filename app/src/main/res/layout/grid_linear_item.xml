@@ -10,7 +10,8 @@
         android:id="@+id/launcher_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="3"/>
+        android:layout_weight="3"
+        android:background="@drawable/circle_item"/>
 
     <LinearLayout
         android:layout_width="match_parent"
