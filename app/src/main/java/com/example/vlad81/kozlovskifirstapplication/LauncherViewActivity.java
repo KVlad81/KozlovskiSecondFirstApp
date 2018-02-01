@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +19,7 @@ import com.example.vlad81.kozlovskifirstapplication.launcher.LauncherAdapter;
 import com.example.vlad81.kozlovskifirstapplication.launcher.OffsetItemDecoration;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -27,12 +29,25 @@ public class LauncherViewActivity extends AppCompatActivity
     public LauncherViewActivity(){}
 
     private int isPlot;
+    private List<Integer> mData;
+    static final Random rand = new Random();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_navigation_view);
         isPlot = getIntent().getIntExtra("isPlot", 1);
+
+        FloatingActionButton addNewItemButton = (FloatingActionButton) findViewById(R.id.fab);
+        addNewItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+                mData.add(0,color);
+            }
+        });
+
         createGridLayout();
     }
 
@@ -51,17 +66,16 @@ public class LauncherViewActivity extends AppCompatActivity
         final GridLayoutManager layoutManager = new GridLayoutManager(this, spanCount);
         recyclerView.setLayoutManager(layoutManager);
 
-        final List<Integer> data = generateData();
-        final LauncherAdapter launcherAdapter = new LauncherAdapter(data, getApplicationContext());
+        mData = generateData();
+        final LauncherAdapter launcherAdapter = new LauncherAdapter(mData, getApplicationContext());
         recyclerView.setAdapter(launcherAdapter);
     }
 
     @NonNull
     private List<Integer> generateData() {
-        final List<Integer> colors = new ArrayList<>();
-        final Random rnd = new Random();
+        final List<Integer> colors = new LinkedList<>();
         for (int i = 0; i < 1000; i++) {
-            int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+            int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
             colors.add(color);
         }
 
