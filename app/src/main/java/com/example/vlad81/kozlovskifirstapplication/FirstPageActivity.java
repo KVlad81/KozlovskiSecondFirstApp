@@ -75,8 +75,8 @@ public class FirstPageActivity extends AppCompatActivity {
                         addForthPageRadioButtonListeners();
                     }
                 } else {
-                    Intent nextScreen = new Intent(getApplicationContext(), LinearLayoutActivity.class);
-                    //nextScreen.putExtra("isPlot", forthPageTheme);
+                    Intent nextScreen = new Intent(getApplicationContext(), LauncherViewActivity.class);
+                    nextScreen.putExtra("isPlot", forthPageTheme);
                     firstPage = 0;
                     startActivity(nextScreen);
                 }
