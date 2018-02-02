@@ -8,8 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:titleTextStyle">@style/AppTheme.TextStyle</item>
-        <item name="android:windowTitleStyle">@style/AppTheme.TextStyle</item>
         <item name="actionBarStyle">@style/MyActionBar</item>
     </style>
 
@@ -32,7 +30,6 @@
         <item name="windowNoTitle">true</item>
 
         <item name="android:textColorPrimary">@color/black</item>
-        <item name="android:titleTextStyle">@style/AppTheme.titleTextStyle</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
