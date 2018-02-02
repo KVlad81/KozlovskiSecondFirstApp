@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="density_types">
+        <item>Dense</item>
+        <item>Standard</item>
+    </string-array>
+    <integer-array name="density_values">
+        <item>2</item>
+        <item>1</item>
+    </integer-array>
+    <string-array name="types">
+        <item>Light theme</item>
+        <item>Dark theme</item>
+    </string-array>
+    <integer-array name="type_values">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+</resources>

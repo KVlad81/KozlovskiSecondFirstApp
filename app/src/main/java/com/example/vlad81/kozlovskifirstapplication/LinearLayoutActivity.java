@@ -62,12 +62,6 @@ public class LinearLayoutActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.post(new Runnable() {
-            @Override
-            public void run() {
-                navigationView.setCheckedItem(R.id.list_activity);
-            }
-        });
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
         final View profileImage = navigationHeaderView.findViewById(R.id.imageView);
@@ -128,17 +122,10 @@ public class LinearLayoutActivity extends AppCompatActivity
 
         if (id == R.id.launcher_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LauncherViewActivity.class);
-            navigationView.post(new Runnable() {
-                @Override
-                public void run() {
-                    navigationView.setCheckedItem(R.id.launcher_activity);
-                }
-            });
             startActivity(toListActivity);
-        } else if (id == R.id.list_activity) {
-
         } else if (id == R.id.settings) {
-
+            Intent toSettings = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(toSettings);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

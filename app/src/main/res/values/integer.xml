@@ -2,4 +2,6 @@
 <resources>
     <integer name="span_count">4</integer>
     <integer name="plot_span_count">5</integer>
+    <integer name="default_density_value">1</integer>
+    <integer name="default_type_value">1</integer>
 </resources>

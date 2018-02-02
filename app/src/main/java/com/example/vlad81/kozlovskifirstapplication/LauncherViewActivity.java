@@ -133,15 +133,10 @@ public class LauncherViewActivity extends AppCompatActivity
 
         if (id == R.id.list_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
-            navigationView.post(new Runnable() {
-                @Override
-                public void run() {
-                    navigationView.setCheckedItem(R.id.list_activity);
-                }
-            });
             startActivity(toListActivity);
         } else if (id == R.id.settings) {
-            //TODO
+            Intent toSettings = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(toSettings);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

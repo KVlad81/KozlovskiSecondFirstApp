@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="pref_densityType"
+        android:title="@string/Density"
+        android:dialogTitle="@string/Density"
+        android:entries="@array/density_types"
+        android:entryValues="@array/density_values"
+        android:defaultValue="@integer/default_density_value" />
+    <ListPreference
+        android:key="pref_Theme"
+        android:title="@string/Theme"
+        android:dialogTitle="@string/Theme"
+        android:entries="@array/types"
+        android:entryValues="@array/type_values"
+        android:defaultValue="@integer/default_type_value" />
+
+</PreferenceScreen>
