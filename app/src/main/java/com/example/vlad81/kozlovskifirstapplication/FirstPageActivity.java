@@ -105,8 +105,11 @@ public class FirstPageActivity extends AppCompatActivity {
 
         if (thirdPageTheme == 2) {
             setTheme(R.style.DarkAppTheme_NoActionBar);
+            next.setBackgroundColor(getResources().getColor(R.color.darkColorPrimary));
+
         } else {
             setTheme(R.style.AppTheme_NoActionBar);
+            next.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }
     }
 
