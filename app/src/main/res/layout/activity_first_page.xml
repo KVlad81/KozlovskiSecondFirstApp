@@ -12,7 +12,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/darkGreen"
+        android:background="@color/colorPrimary"
         android:text="@string/next"
         android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
