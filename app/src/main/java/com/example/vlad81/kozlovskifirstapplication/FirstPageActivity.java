@@ -69,6 +69,12 @@ public class FirstPageActivity extends AppCompatActivity {
 
         next = findViewById(R.id.button);
 
+        if (thirdPageTheme == 1) {
+            next.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        } else {
+            next.setBackgroundColor(getResources().getColor(R.color.darkColorPrimary));
+        }
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,11 +111,9 @@ public class FirstPageActivity extends AppCompatActivity {
 
         if (thirdPageTheme == 2) {
             setTheme(R.style.DarkAppTheme_NoActionBar);
-            findViewById(R.id.button).setBackgroundColor(getResources().getColor(R.color.darkColorPrimary));
 
         } else {
             setTheme(R.style.AppTheme_NoActionBar);
-            findViewById(R.id.button).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }
     }
 
