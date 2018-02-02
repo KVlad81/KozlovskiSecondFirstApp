@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:titleTextStyle">@style/AppTheme.titleTextStyle</item>
+    </style>
+
+    <style name="AppTheme.titleTextStyle">
+        <item name="android:textColor">
+            @color/black
+        </item>
     </style>
 
     <style name="AppTheme.NoActionBar">
