@@ -42,14 +42,14 @@ public class SettingsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         setTheme();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation_view);
+        setContentView(R.layout.settings_navigation_view);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.settings_drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -62,7 +62,7 @@ public class SettingsActivity extends AppCompatActivity
         navigationView.post(new Runnable() {
             @Override
             public void run() {
-                navigationView.setCheckedItem(R.id.launcher_activity);
+                navigationView.setCheckedItem(R.id.settings);
             }
         });
 
