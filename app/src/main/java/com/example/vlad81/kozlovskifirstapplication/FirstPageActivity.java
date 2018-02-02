@@ -47,8 +47,8 @@ public class FirstPageActivity extends AppCompatActivity {
                 PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         editor = sharedPreferences.edit();
 
-        forthPageTheme = sharedPreferences.getInt("pref_Theme", 1);
-        thirdPageTheme = sharedPreferences.getInt("pref_densityType", 1);
+        forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+        thirdPageTheme = Integer.parseInt(sharedPreferences.getString("pref_densityType", "1"));
 
         if (firstPage == 2) {
             addThirdPageRadioButtonsListeners();
@@ -85,8 +85,8 @@ public class FirstPageActivity extends AppCompatActivity {
                     }
                 } else {
                     Intent nextScreen = new Intent(getApplicationContext(), LauncherViewActivity.class);
-                    editor.putInt("pref_Theme", forthPageTheme);
-                    editor.putInt("pref_densityType", thirdPageTheme);
+                    editor.putString("pref_Theme", String.valueOf(forthPageTheme));
+                    editor.putString("pref_densityType", String.valueOf(thirdPageTheme));
                     editor.apply();
                     firstPage = 0;
                     startActivity(nextScreen);

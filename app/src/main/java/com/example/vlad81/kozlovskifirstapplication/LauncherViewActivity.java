@@ -48,7 +48,7 @@ public class LauncherViewActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
-        isPlot = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getInt("pref_densityType", 1);
+        isPlot = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("pref_densityType", "1"));
 
         TAG = getResources().getString(R.string.launcher_view_activity);
 
