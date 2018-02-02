@@ -59,12 +59,6 @@ public class SettingsActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.post(new Runnable() {
-            @Override
-            public void run() {
-                navigationView.setCheckedItem(R.id.settings);
-            }
-        });
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
         final View profileImage = navigationHeaderView.findViewById(R.id.imageView);
