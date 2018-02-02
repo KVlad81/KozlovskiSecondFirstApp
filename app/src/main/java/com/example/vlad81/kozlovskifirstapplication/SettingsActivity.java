@@ -76,6 +76,10 @@ public class SettingsActivity extends AppCompatActivity
 
     }
 
+    @Override
+    public void onBackPressed() {
+        
+    }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -91,10 +95,12 @@ public class SettingsActivity extends AppCompatActivity
             Intent toLauncherActivity = new Intent();
             toLauncherActivity.setClass(this, LauncherViewActivity.class);
             toLauncherActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    | Intent.FLAG_ACTIVITY_NEW_TASK );startActivity(toLauncherActivity);
+                    | Intent.FLAG_ACTIVITY_NEW_TASK );
+            startActivity(toLauncherActivity);
+
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.settings_drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
