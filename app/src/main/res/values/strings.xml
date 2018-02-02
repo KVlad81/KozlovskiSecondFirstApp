@@ -29,4 +29,6 @@
     <string name="title_activity_settings" translatable="false">Settings</string>
     <string name="Density" translatable="false">Density</string>
     <string name="Theme" translatable="false">Theme</string>
+    <string name="one" translatable="false">1</string>
+    <string name="two" translatable="false">2</string>
 </resources>

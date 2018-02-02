@@ -4,16 +4,16 @@
         <item>@string/Density</item>
         <item>@string/standard</item>
     </string-array>
-    <integer-array name="density_values">
-        <item>2</item>
-        <item>1</item>
-    </integer-array>
+    <string-array name="density_values">
+        <item>@string/two</item>
+        <item>@string/one</item>
+    </string-array>
     <string-array name="types">
         <item>@string/light_theme</item>
         <item>@string/dark_theme</item>
     </string-array>
-    <integer-array name="type_values">
-        <item>1</item>
-        <item>2</item>
-    </integer-array>
+    <string-array name="type_values">
+        <item>@string/one</item>
+        <item>@string/two</item>
+    </string-array>
 </resources>
