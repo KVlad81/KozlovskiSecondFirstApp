@@ -36,7 +36,7 @@
 
     <style name="RadioButtonGreenTheme">
         <item name="android:layout_weight">1</item>
-        <item name="android:buttonTint">@color/darkGreen</item>
+        <item name="android:buttonTint">@color/black</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">23sp</item>
     </style>
