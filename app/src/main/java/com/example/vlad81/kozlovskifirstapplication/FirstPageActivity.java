@@ -67,7 +67,7 @@ public class FirstPageActivity extends AppCompatActivity {
             }
         }
 
-        next = (Button) findViewById(R.id.button);
+        next = findViewById(R.id.button);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,11 +105,11 @@ public class FirstPageActivity extends AppCompatActivity {
 
         if (thirdPageTheme == 2) {
             setTheme(R.style.DarkAppTheme_NoActionBar);
-            next.setBackgroundColor(getResources().getColor(R.color.darkColorPrimary));
+            findViewById(R.id.button).setBackgroundColor(getResources().getColor(R.color.darkColorPrimary));
 
         } else {
             setTheme(R.style.AppTheme_NoActionBar);
-            next.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            findViewById(R.id.button).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }
     }
 
