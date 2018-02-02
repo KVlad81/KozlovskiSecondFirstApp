@@ -2,7 +2,9 @@ package com.example.vlad81.kozlovskifirstapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +26,8 @@ public class FirstPageActivity extends AppCompatActivity {
     static int firstPage = 0;
     static int thirdPageTheme;
     static int forthPageTheme;
+    SharedPreferences.Editor editor;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
@@ -40,6 +42,13 @@ public class FirstPageActivity extends AppCompatActivity {
         for (int i = firstPage; i < layouts.length; ++i) {
             welcomePages.addView(inflater.inflate(layouts[i], null));
         }
+
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        editor = sharedPreferences.edit();
+
+        forthPageTheme = sharedPreferences.getInt("pref_Theme", 1);
+        thirdPageTheme = sharedPreferences.getInt("pref_densityType", 1);
 
         if (firstPage == 2) {
             addThirdPageRadioButtonsListeners();
@@ -76,7 +85,9 @@ public class FirstPageActivity extends AppCompatActivity {
                     }
                 } else {
                     Intent nextScreen = new Intent(getApplicationContext(), LauncherViewActivity.class);
-                    nextScreen.putExtra("isPlot", forthPageTheme);
+                    editor.putInt("pref_Theme", forthPageTheme);
+                    editor.putInt("pref_densityType", thirdPageTheme);
+                    editor.apply();
                     firstPage = 0;
                     startActivity(nextScreen);
                 }

@@ -4,6 +4,7 @@ import android.app.LauncherActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -47,7 +48,7 @@ public class LauncherViewActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
-        isPlot = getIntent().getIntExtra("isPlot", 1);
+        isPlot = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getInt("pref_densityType", 1);
 
         TAG = getResources().getString(R.string.launcher_view_activity);
 
