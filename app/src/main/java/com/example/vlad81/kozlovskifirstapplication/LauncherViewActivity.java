@@ -2,6 +2,7 @@ package com.example.vlad81.kozlovskifirstapplication;
 
 import android.app.LauncherActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -46,6 +47,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
         isPlot = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("pref_densityType", "1"));
@@ -147,5 +149,18 @@ public class LauncherViewActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setTheme() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        int forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+
+        if (forthPageTheme == 2) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+        } else {
+            setTheme(R.style.AppTheme_NoActionBar);
+        }
     }
 }

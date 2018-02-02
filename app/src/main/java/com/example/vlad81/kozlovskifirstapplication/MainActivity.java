@@ -1,7 +1,9 @@
 package com.example.vlad81.kozlovskifirstapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme();
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
@@ -33,5 +36,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void setTheme() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        int forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+
+        if (forthPageTheme == 2) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+        } else {
+            setTheme(R.style.AppTheme_NoActionBar);
+        }
+    }
 
 }

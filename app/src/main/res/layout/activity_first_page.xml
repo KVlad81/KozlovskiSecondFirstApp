@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vlad81.kozlovskifirstapplication.FirstPageActivity">
+    tools:context="com.example.vlad81.kozlovskifirstapplication.FirstPageActivity"
+    >
 
     <Button
         android:id="@+id/button"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@color/darkGreen"
         android:text="@string/next"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/button_next_margin_top"
         android:layout_marginBottom="@dimen/basic_mergin"

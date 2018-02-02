@@ -29,6 +29,7 @@ public class FirstPageActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
 
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme();
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_first_page);
@@ -95,6 +96,19 @@ public class FirstPageActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void setTheme() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+
+        if (forthPageTheme == 2) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+        } else {
+            setTheme(R.style.AppTheme_NoActionBar);
+        }
     }
 
     private void addForthPageRadioButtonListeners() {

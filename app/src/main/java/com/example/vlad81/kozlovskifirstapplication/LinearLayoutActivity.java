@@ -1,7 +1,9 @@
 package com.example.vlad81.kozlovskifirstapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -41,6 +43,7 @@ public class LinearLayoutActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_navigation_view);
         //isPlot = getIntent().getIntExtra("isPlot", 1);
@@ -131,5 +134,18 @@ public class LinearLayoutActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setTheme() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        int forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+
+        if (forthPageTheme == 2) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+        } else {
+            setTheme(R.style.AppTheme_NoActionBar);
+        }
     }
 }
