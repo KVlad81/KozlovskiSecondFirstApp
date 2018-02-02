@@ -155,9 +155,9 @@ public class LauncherViewActivity extends AppCompatActivity
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
-        int forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+        int thirdPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
 
-        if (forthPageTheme == 2) {
+        if (thirdPageTheme == 2) {
             setTheme(R.style.DarkAppTheme_NoActionBar);
         } else {
             setTheme(R.style.AppTheme_NoActionBar);

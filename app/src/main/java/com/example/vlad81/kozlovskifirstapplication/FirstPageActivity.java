@@ -33,7 +33,7 @@ public class FirstPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_first_page);
-        
+
         welcomePages = (ViewFlipper) findViewById(R.id.viewflipper);
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -47,8 +47,8 @@ public class FirstPageActivity extends AppCompatActivity {
                 PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         editor = sharedPreferences.edit();
 
-        forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
-        thirdPageTheme = Integer.parseInt(sharedPreferences.getString("pref_densityType", "1"));
+        forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_densityType", "1"));
+        thirdPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
 
         if (firstPage == 2) {
             addThirdPageRadioButtonsListeners();
@@ -85,8 +85,8 @@ public class FirstPageActivity extends AppCompatActivity {
                     }
                 } else {
                     Intent nextScreen = new Intent(getApplicationContext(), LauncherViewActivity.class);
-                    editor.putString("pref_Theme", String.valueOf(forthPageTheme));
-                    editor.putString("pref_densityType", String.valueOf(thirdPageTheme));
+                    editor.putString("pref_Theme", String.valueOf(thirdPageTheme));
+                    editor.putString("pref_densityType", String.valueOf(forthPageTheme));
                     editor.apply();
                     firstPage = 0;
                     nextScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -101,9 +101,9 @@ public class FirstPageActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
-        forthPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
+        thirdPageTheme = Integer.parseInt(sharedPreferences.getString("pref_Theme", "1"));
 
-        if (forthPageTheme == 2) {
+        if (thirdPageTheme == 2) {
             setTheme(R.style.DarkAppTheme_NoActionBar);
         } else {
             setTheme(R.style.AppTheme_NoActionBar);
@@ -118,7 +118,7 @@ public class FirstPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 plotTheme.setChecked(false);
                 forthPageTheme = 1;
-                editor.putString("pref_Theme", "1");
+                editor.putString("pref_densityType", "1");
                 editor.apply();
             }
         });
@@ -127,7 +127,7 @@ public class FirstPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 forthPageTheme = 2;
                 standardTheme.setChecked(false);
-                editor.putString("pref_Theme", "2");
+                editor.putString("pref_densityType", "2");
                 editor.apply();
             }
         });
@@ -142,7 +142,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 darkTheme.setChecked(false);
                 thirdPageTheme = 1;
                 ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackground(getDrawable(R.drawable.customborder));
-                editor.putString("pref_densityType", "1");
+                editor.putString("pref_Theme", "1");
                 editor.apply();
             }
         });
@@ -152,7 +152,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 thirdPageTheme = 2;
                 lightTheme.setChecked(false);
                 ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackgroundColor(Color.rgb(0xC0, 0xC0, 0xC0));
-                editor.putString("pref_densityType", "2");
+                editor.putString("pref_Theme", "2");
                 editor.apply();
             }
         });
