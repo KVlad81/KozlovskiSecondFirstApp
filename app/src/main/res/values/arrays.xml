@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="density_types">
-        <item>@string/Density</item>
+        <item>@string/plot</item>
         <item>@string/standard</item>
     </string-array>
     <string-array name="density_values">

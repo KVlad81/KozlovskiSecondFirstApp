@@ -13,4 +13,8 @@
     <string name="next">下一個</string>
     <string name="color">顏色</string>
     <string name="yes">是</string>
+    <string name="Density">密度</string>
+    <string name="Theme">主題</string>
+    <string name="really_delete">你真的想刪除這個項目嗎？</string>
+    <string name="deleted_item">已刪除的項目在位置</string>
 </resources>

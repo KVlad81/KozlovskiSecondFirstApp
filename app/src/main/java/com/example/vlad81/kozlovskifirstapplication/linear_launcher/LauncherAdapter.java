@@ -18,7 +18,7 @@ import java.util.List;
 
 public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private static final String TAG = "LinearAdapter";
+    private static String TAG;
     @NonNull
     private final List<Integer> mData;
 
@@ -27,6 +27,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public LauncherAdapter(@NonNull final List<Integer> data, Context context) {
         this.context = context;
         mData = data;
+        TAG = context.getString(R.string.linear_adapter);
     }
 
     @Override
@@ -58,44 +59,44 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         view.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View v) {
-                Snackbar snackbar = Snackbar.make(v, "Do you really want to delete this item?", 5000);
-                snackbar.setAction("YES", new View.OnClickListener() {
+                Snackbar snackbar = Snackbar.make(v, R.string.really_delete, 5000);
+                snackbar.setAction(R.string.yes, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         gridHolder.getListIterator().next();
                         gridHolder.getListIterator().remove();
-                        Log.i(TAG, "Deleted item at position "+position);
+                        Log.i(TAG, context.getString(R.string.deleted_item)+position);
                         notifyDataSetChanged();
                     }
                 });
                 snackbar.addCallback(new Snackbar.Callback(){
                     @Override
                     public void onShown(Snackbar sb) {
-                        Log.i(TAG, "Snackbar at position " + position + " was shown.");
+                        Log.i(TAG, context.getString(R.string.snackbar_at_position) + position + context.getString(R.string.was_shown));
                     }
 
                     @Override
                     public void onDismissed(Snackbar transientBottomBar, int event) {
                         switch (event) {
                             case Snackbar.Callback.DISMISS_EVENT_ACTION:
-                                Log.i(TAG, "Snackbar at position"+ position +
-                                        " was dismissed via an action click.");
+                                Log.i(TAG, context.getString(R.string.snackbar_at_position) + position +
+                                        context.getString(R.string.via_click));
                                 break;
                             case Snackbar.Callback.DISMISS_EVENT_CONSECUTIVE:
-                                Log.i(TAG, "Snackbar at position"+ position +
-                                        " was from a new Snackbar being shown.");
+                                Log.i(TAG, context.getString(R.string.snackbar_at_position) + position +
+                                        context.getString(R.string.new_snackbar));
                                 break;
                             case Snackbar.Callback.DISMISS_EVENT_MANUAL:
-                                Log.i(TAG, "Snackbar at position"+ position +
-                                        " was dismissed via a call to dismiss().");
+                                Log.i(TAG, context.getString(R.string.snackbar_at_position) + position +
+                                        context.getString(R.string.dismiss));
                                 break;
                             case Snackbar.Callback.DISMISS_EVENT_SWIPE:
-                                Log.i(TAG, "Snackbar at position"+ position +
-                                        " was dismissed via a swipe.");
+                                Log.i(TAG, context.getString(R.string.snackbar_at_position) + position +
+                                        context.getString(R.string.via_swipe));
                                 break;
                             case Snackbar.Callback.DISMISS_EVENT_TIMEOUT:
-                                Log.i(TAG, "Snackbar at position"+ position +
-                                        " was dismissed via a timeout.");
+                                Log.i(TAG, context.getString(R.string.snackbar_at_position) + position +
+                                        context.getString(R.string.via_timeout));
                                 break;
 
                         }

@@ -13,4 +13,8 @@
     <string name="_5_n_7">Партрэтная: 5 абразкоў у радку \nЛандшафтная: 7 абразкоў у радку</string>
     <string name="color">Колер</string>
     <string name="yes">ТАК</string>
+    <string name="Density">Шчыльнасць</string>
+    <string name="Theme">Тэма</string>
+    <string name="really_delete">Вы сапраўды жадаеце выдаліць гэты элемент?</string>
+    <string name="deleted_item">Выдаляецца элемент у пазіцыі</string>
 </resources>

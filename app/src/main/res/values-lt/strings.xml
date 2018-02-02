@@ -13,4 +13,8 @@
     <string name="next">Kitas</string>
     <string name="color">Spalva</string>
     <string name="yes">TAIP</string>
+    <string name="Density">Tankis</string>
+    <string name="Theme">Tema</string>
+    <string name="really_delete">Ar tikrai norite ištrinti šį elementą?</string>
+    <string name="deleted_item">Ištrintas elementas pozicijoje</string>
 </resources>

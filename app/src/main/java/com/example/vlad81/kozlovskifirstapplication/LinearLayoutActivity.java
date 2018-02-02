@@ -30,15 +30,13 @@ import java.util.Random;
 public class LinearLayoutActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "LinearLayoutActivity";
-    private DrawerLayout mDrawerLayout;
+    private static String TAG;
 
     public LinearLayoutActivity() {}
 
     private List<Integer> mData;
     static final Random rand = new Random();
     private LauncherAdapter adapter;
-    private NavigationView navigationView;
 
 
     @Override
@@ -47,12 +45,13 @@ public class LinearLayoutActivity extends AppCompatActivity
         setContentView(R.layout.activity_linear_navigation_view);
         //isPlot = getIntent().getIntExtra("isPlot", 1);
 
+        TAG = getResources().getString(R.string.linear_layout_activity);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -60,7 +59,7 @@ public class LinearLayoutActivity extends AppCompatActivity
         toggle.syncState();
 
 
-        navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         final View navigationHeaderView = navigationView.getHeaderView(0);
@@ -81,7 +80,7 @@ public class LinearLayoutActivity extends AppCompatActivity
                 int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
                 mData.add(0,color);
                 adapter.notifyDataSetChanged();
-                Log.i(TAG, "Inserted new element at start.");
+                Log.i(TAG, getResources().getString(R.string.inserted_at_start));
             }
         });
 
@@ -114,7 +113,6 @@ public class LinearLayoutActivity extends AppCompatActivity
         return colors;
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.

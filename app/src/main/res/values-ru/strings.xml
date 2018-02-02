@@ -13,4 +13,8 @@
     <string name="next">Далее</string>
     <string name="color">Цвет</string>
     <string name="yes">ДА</string>
+    <string name="Density">Плотность</string>
+    <string name="Theme">Тема</string>
+    <string name="really_delete">Вы действительно хотите удалить этот элемент?</string>
+    <string name="deleted_item">Удален элемент на позиции</string>
 </resources>

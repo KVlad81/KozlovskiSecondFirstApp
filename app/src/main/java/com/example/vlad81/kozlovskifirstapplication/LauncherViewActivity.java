@@ -39,7 +39,7 @@ public class LauncherViewActivity extends AppCompatActivity
     static final Random rand = new Random();
     private LauncherAdapter adapter;
 
-    public static final String TAG = "LauncherViewActivity";
+    public static String TAG;
 
     private NavigationView navigationView;
 
@@ -48,6 +48,8 @@ public class LauncherViewActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
         isPlot = getIntent().getIntExtra("isPlot", 1);
+
+        TAG = getResources().getString(R.string.launcher_view_activity);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -88,7 +90,7 @@ public class LauncherViewActivity extends AppCompatActivity
                 int color = Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
                 mData.add(0,color);
                 adapter.notifyDataSetChanged();
-                Log.i(TAG, "Inserted new element at start.");
+                Log.i(TAG, getString(R.string.inserted_at_start));
             }
         });
 

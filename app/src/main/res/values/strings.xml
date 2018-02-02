@@ -23,12 +23,26 @@
     <string name="color">Color</string>
     <string name="you_didn_t_change_text" translatable="false">You didn\'t change text</string>
     <string name="this_is_description_text" translatable="false">This is description text</string>
-    <string name="yes">YES</string>
     <string name="launcher_activity" translatable="false">Launcher activity</string>
     <string name="list_activity" translatable="false">List activity</string>
     <string name="title_activity_settings" translatable="false">Settings</string>
-    <string name="Density" translatable="false">Density</string>
-    <string name="Theme" translatable="false">Theme</string>
+    <string name="Density">Density</string>
+    <string name="Theme">Theme</string>
     <string name="one" translatable="false">1</string>
     <string name="two" translatable="false">2</string>
+    <string name="really_delete">Do you really want to delete this item?</string>
+    <string name="deleted_item">Deleted item at position</string>
+    <string name="snackbar_at_position" translatable="false">Snackbar at position</string>
+    <string name="via_click" translatable="false">was dismissed via an action click.</string>
+    <string name="new_snackbar" translatable="false">was from a new Snackbar being shown.</string>
+    <string name="dismiss" translatable="false">was dismissed via a call to dismiss().</string>
+    <string name="via_swipe" translatable="false">was dismissed via a swipe.</string>
+    <string name="via_timeout" translatable="false">was dismissed via a timeout.</string>
+    <string name="was_shown" translatable="false">was shown.</string>
+    <string name="inserted_at_start" translatable="false">Inserted new element at start.</string>
+    <string name="launcher_view_activity" translatable="false">LauncherViewActivity</string>
+    <string name="linear_layout_activity" translatable="false">LinearLayoutActivity</string>
+    <string name="linear_adapter" translatable="false">LinearAdapter</string>
+    <string name="launcher_adapter" translatable="false">LauncherAdapter</string>
+    <string name="yes">YES</string>
 </resources>

@@ -13,4 +13,8 @@
     <string name="next">Nächster</string>
     <string name="color">Farbe</string>
     <string name="yes">JA</string>
+    <string name="Density">Dichte</string>
+    <string name="Theme">Thema</string>
+    <string name="really_delete">Möchten Sie diesen Artikel wirklich löschen?</string>
+    <string name="deleted_item">Gelöschter Gegenstand an der Position</string>
 </resources>
