@@ -136,6 +136,7 @@ public class LauncherViewActivity extends AppCompatActivity
 
         if (id == R.id.list_activity) {
             Intent toListActivity = new Intent(getApplicationContext(), LinearLayoutActivity.class);
+            toListActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
             startActivity(toListActivity);
         } else if (id == R.id.settings) {
             Intent toSettings = new Intent(getApplicationContext(), SettingsActivity.class);
