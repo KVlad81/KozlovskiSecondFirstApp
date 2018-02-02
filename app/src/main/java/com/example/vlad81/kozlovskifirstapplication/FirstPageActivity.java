@@ -33,8 +33,7 @@ public class FirstPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_first_page);
-
-        getSupportActionBar().hide();
+        
         welcomePages = (ViewFlipper) findViewById(R.id.viewflipper);
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
