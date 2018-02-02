@@ -104,6 +104,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 plotTheme.setChecked(false);
                 forthPageTheme = 1;
                 editor.putString("pref_Theme", "1");
+                editor.apply();
             }
         });
         plotTheme.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +113,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 forthPageTheme = 2;
                 standardTheme.setChecked(false);
                 editor.putString("pref_Theme", "2");
+                editor.apply();
             }
         });
     }
@@ -126,6 +128,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 thirdPageTheme = 1;
                 ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackground(getDrawable(R.drawable.customborder));
                 editor.putString("pref_densityType", "1");
+                editor.apply();
             }
         });
         darkTheme.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +138,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 lightTheme.setChecked(false);
                 ((LinearLayout)findViewById(R.id.darkthemelayout)).setBackgroundColor(Color.rgb(0xC0, 0xC0, 0xC0));
                 editor.putString("pref_densityType", "2");
+                editor.apply();
             }
         });
     }
